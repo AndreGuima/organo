@@ -5,7 +5,7 @@ import './Formulario.css'
 import { useState } from 'react'
 
 const Formulario = (props) => {
-    const times = ['Programação', 'Front-End', 'Data Science', 'DevOps','UX e Design','Inovação e Gestão']
+
 
     const [nome, setNome] = useState('')
     const [cargo, setCargo] = useState('')
@@ -26,7 +26,7 @@ const Formulario = (props) => {
         <section className="formulario">
             <form onSubmit={aoSalvar}>
                 <h2>Preencha os dados para criar o card do colaborador</h2>
-                <CampoTexto 
+                <CampoTexto
                     valor={nome}
                     aoAlterado={valor => setNome(valor)}
                     obrigatorio={true} label="Nome" placeholder="Digite seu nome..." />
@@ -41,7 +41,7 @@ const Formulario = (props) => {
                 <ListaSuspensa
                     valor={time}
                     aoAlterado={valor => setTime(valor)}
-                    obrigatorio={true} label="Time" itens={times}></ListaSuspensa>
+                    obrigatorio={true} label="Time" itens={props.nomeDosTimes}></ListaSuspensa>
                 <Botao>Criar Card</Botao>
             </form>
         </section>
